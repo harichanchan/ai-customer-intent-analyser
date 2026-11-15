@@ -51,3 +51,39 @@ may overlap with the information in that first message.
 
 Action-Based Conversations Dataset (ABCD), Chen et al., 2021:
 https://aclanthology.org/2021.naacl-main.239/
+
+## How to run the app
+
+1. Download or clone this repository.
+2. Open a terminal in the project folder.
+3. Install the required packages:
+
+   ```bash
+   python -m pip install -r requirements.txt
+   ```
+
+4. Start the app:
+
+   ```bash
+   python -m streamlit run app.py
+   ```
+
+The app uses the included `intent_model.joblib` file. It only
+loads the model; it does not require the dataset to run.
+
+## How to retrain the model
+
+Download `abcd_v1.1.json.gz` from the
+[official ABCD repository](https://github.com/asappresearch/abcd)
+and place it in the project folder. Then run:
+
+```bash
+python train_model.py
+```
+
+The training code also requires the same dependencies listed
+in `requirements.txt`.
+
+The model was developed using Python 3.14.3. Reproducing the
+saved model may require the same scikit-learn version used to
+train it.
